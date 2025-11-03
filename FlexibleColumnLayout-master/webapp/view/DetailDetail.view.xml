@@ -1,0 +1,29 @@
+<mvc:View displayBlock="true" height="100%" controllerName="flexiblecolumnlayout.controller.DetailDetail"
+	xmlns="sap.m"
+	xmlns:f="sap.f"
+	xmlns:mvc="sap.ui.core.mvc">
+	<f:DynamicPage id="iddynamicPageDetailDetail" toggleHeaderOnTitleClick="false">
+		<!-- DynamicPage Title -->
+		<f:title>
+			<f:DynamicPageTitle id="detailDetail">
+				<f:heading>
+					<Title id="detailDetailTitle" text="Detail Detail"/>
+				</f:heading>
+
+				<f:navigationActions>
+					<OverflowToolbarButton id="detailDetailClose" type="Transparent" icon="sap-icon://full-screen" press="fullscreen" visible="{=!${LayoutModel>/fullScreen}}"/>
+					<OverflowToolbarButton id="detailDetailFullScreen" type="Transparent" icon="sap-icon://exit-full-screen" press="fullscreen" visible="{=${LayoutModel>/fullScreen}}"/>
+					<OverflowToolbarButton id="detailDetailExitFullScreen" type="Transparent" icon="sap-icon://decline" press="closeDetailDetail" tooltip="Close" visible="true"/>
+				</f:navigationActions>
+			</f:DynamicPageTitle>
+		</f:title>
+
+		<!-- DynamicPage Content -->
+		<f:content>
+			<Button id="detailDetailButton" text="This is Detail Detail Page" press="showToast" />
+		</f:content>
+
+		<!-- DynamicPage Footer -->
+
+	</f:DynamicPage>
+</mvc:View>

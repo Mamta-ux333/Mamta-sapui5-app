@@ -1,0 +1,26 @@
+<mvc:View displayBlock="true" height="100%" controllerName="flexiblecolumnlayout.controller.Master"
+	xmlns="sap.m"
+	xmlns:f="sap.f"
+	xmlns:mvc="sap.ui.core.mvc">
+	<f:DynamicPage id="iddynamicPageMaster" toggleHeaderOnTitleClick="false">
+		<!-- DynamicPage Title -->
+		<f:title>
+			<f:DynamicPageTitle id="master">
+				<f:heading>
+					<Title id="masterTitle" text="Master"/>
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title>
+
+		<!-- DynamicPage Content -->
+		<f:content>
+			<HBox id="h1">
+				<Button id="openDetailButton" text="Open Detail" press="openDetail" />
+				<Button id="backHomeButton" text="Back Home" press="openHome" />
+			</HBox>
+		</f:content>
+
+		<!-- DynamicPage Footer -->
+
+	</f:DynamicPage>
+</mvc:View>

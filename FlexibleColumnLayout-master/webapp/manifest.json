@@ -1,0 +1,145 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "flexiblecolumnlayout",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.14.5",
+      "toolsId": "464abc72-8726-4e98-8af0-a775a5af464a"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.128.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "flexiblecolumnlayout.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.f.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "flexiblecolumnlayout.view",
+        "controlAggregation": "beginColumnPages",
+        "controlId": "idFlexLayout"
+      },
+      "routes": [
+        {
+          "name": "Home",
+          "pattern": "",
+          "target": [
+            "TargetHome"
+          ]
+        },
+        {
+          "name": "Master",
+          "pattern": "master",
+          "target": [
+            "TargetMaster"
+          ]
+        },
+        {
+          "name": "Detail",
+          "pattern": "detail",
+          "target": [
+            "TargetDetail"
+          ]
+        },
+        {
+          "name": "DetailDetail",
+          "pattern": "detailDetail",
+          "target": [
+            "TargetDetailDetail"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetHome": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Home",
+          "viewName": "Home"
+        },
+        "TargetMaster": {
+          "viewName": "Master",
+          "transition": "slide",
+          "viewId": "Master",
+          "viewLevel": "2"
+        },
+        "TargetDetail": {
+          "viewName": "Detail",
+          "controlAggregation": "midColumnPages",
+          "transition": "slide",
+          "viewId": "Detail",
+          "viewLevel": "3"
+        },
+        "TargetDetailDetail": {
+          "viewName": "DetailDetail",
+          "controlAggregation": "endColumnPages",
+          "transition": "slide",
+          "viewId": "DetailDetail",
+          "viewLevel": "4"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "flexiblecolumnlayout.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}
